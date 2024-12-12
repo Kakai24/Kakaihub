@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>KAIHUB</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicons -->
+    <link href="assets/img/kakai.png" rel="icon" />
+    <link href="assets/img/kakai.png" rel="apple-touch-icon" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Amatic+SC:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet" />
+  </head>
+
+  <body class="index-page">
+    <header id="header" class="header d-flex align-items-center sticky-top">
+      <div
+        class="container position-relative d-flex align-items-center justify-content-between"
+      >
+        <a
+          href="index.html"
+          class="logo d-flex align-items-center me-auto me-xl-0"
+        >
+          <img src="assets/img/kaihub.svg" alt="LOGO" />
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li>
+              <a href="#hero" class="active">Home<br /></a>
+            </li>
+            <li><a href="#food-calculator">Calculator</a></li>
+            <li><a href="#menu">Common Menu</a></li>
+
+            <li><a href="#dietitian">Feature Dietitian</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- Hero Section -->
+      <section id="hero" class="hero section light-background">
+        <div class="container">
+          <div
+            class="row gy-4 justify-content-center justify-content-lg-between"
+          >
+            <div
+              class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center"
+            >
+              <h1 data-aos="fade-up">Learn about the<br />Food you eat!</h1>
+              <p data-aos="fade-up" data-aos-delay="100">
+                Kaihub is here to help you learn about how to calculate the food
+                content.
+              </p>
+            </div>
+            <div
+              class="col-lg-5 order-1 order-lg-2 hero-img"
+              data-aos="zoom-out"
+            >
+              <img
+                src="assets/img/kakai.png"
+                class="img-fluid animated"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Hero Section -->
+
+      <!-- Food Calculator Section -->
+      <section id="food-calculator">
+        <h1>Food Calculator</h1>
+        <h2>1 Per Serving</h2>
+        <form id="food-form">
+          <label for="categories">Select Categories:</label>
+          <select id="categories" multiple>
+            <option value="raw-vegetable">Raw Vegetables</option>
+            <option value="cooked-vegetable">Cooked Vegetables</option>
+            <option value="fruits">Fruits</option>
+            <option value="meat">Meat</option>
+            <option value="RiceA">Rice A</option>
+            <option value="RiceB">Rice B</option>
+            <option value="RiceC">Rice C</option>
+            <option value="dairy">Dairy</option>
+          </select>
+          <button type="button" id="add-category-btn">Load Ingredients</button>
+        </form>
+
+        <!-- Hidden Ingredients container -->
+        <div id="ingredients-container" class="hidden">
+          <h2>Select Ingredients</h2>
+          <div id="ingredients-options"></div>
+        </div>
+
+        <div id="selected-tags">
+          <h2>Selected Ingredients</h2>
+          <div id="tags-container"></div>
+        </div>
+
+        <div id="result">
+          <h2>Nutrition Results</h2>
+          <p>Protein: <span id="protein">0</span>g</p>
+          <p>Fats: <span id="fats">0</span>g</p>
+          <p>Carbs: <span id="carbs">0</span>g</p>
+          <p>Calories: <span id="calories">0</span> kcal</p>
+        </div>
+      </section>
+      <!-- /Food Calculator Section -->
+
+      <!-- Menu Section -->
+      <section id="menu" class="menu section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <p>
+            <span>Common Carinderia</span>
+            <span class="description-title">Food Menu</span>
+          </p>
+        </div>
+        <!-- End Section Title -->
+
+        <div class="container">
+          <ul
+            class="nav nav-tabs d-flex justify-content-center"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <li class="nav-item">
+              <a
+                class="nav-link active show"
+                data-bs-toggle="tab"
+                data-bs-target="#menu-starters"
+              >
+                <h4>Snacks</h4>
+              </a>
+            </li>
+            <!-- End tab nav item -->
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="tab"
+                data-bs-target="#menu-breakfast"
+              >
+                <h4>Breakfast</h4> </a
+              ><!-- End tab nav item -->
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="tab"
+                data-bs-target="#menu-lunch"
+              >
+                <h4>Lunch</h4>
+              </a>
+            </li>
+            <!-- End tab nav item -->
+
+          </ul>
+
+          <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+            <div class="tab-pane fade active show" id="menu-starters">
+              <div class="tab-header text-center">
+                <p>Menu</p>
+                <h3>Snacks</h3>
+              </div>
+
+              <div class="row gy-5">
+                <!-- Snack 1 -->
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/1.png" class="glightbox">
+                    <img src="assets/img/menu/1.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Puto Cheese</h4>  
+                  <p class="ingredients">
+                    Rice flour, water, sugar, cheese, baking powder
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">3g</span></li>
+                      <li>Fats: <span class="foodcontent1">3g</span></li>
+                      <li>Carbs: <span class="foodcontent1">28g</span></li>
+                      <li>Calories: <span class="foodcontent1">150</span></li>
+                    </ul>
+                  </p>
+                </div>
+
+                <!-- Snack 2 -->
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/2.png" class="glightbox">
+                    <img src="assets/img/menu/2.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Kakanin (Biko)</h4>  
+                  <p class="ingredients">
+                    Glutinous rice, coconut milk, brown sugar, salt
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">3g</span></li>
+                      <li>Fats: <span class="foodcontent1">6g</span></li>
+                      <li>Carbs: <span class="foodcontent1">35g</span></li>
+                      <li>Calories: <span class="foodcontent1">180</span></li>
+                    </ul>
+                  </p>
+                </div>
+
+                <!-- Snack 3 -->
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/3.png" class="glightbox">
+                    <img src="assets/img/menu/3.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Turon</h4>  
+                  <p class="ingredients">
+                    Ripe banana, spring roll wrapper, sugar, oil for frying
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">1g</span></li>
+                      <li>Fats: <span class="foodcontent1">5g</span></li>
+                      <li>Carbs: <span class="foodcontent1">28g</span></li>
+                      <li>Calories: <span class="foodcontent1">150</span></li>
+                    </ul>
+                  </p>
+                </div>
+
+                <!-- Snack 4 -->
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/4.png" class="glightbox">
+                    <img src="assets/img/menu/4.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Banana Q</h4>  
+                  <p class="ingredients">
+                    Ripe banana, brown sugar, oil for frying
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">1g</span></li>
+                      <li>Fats: <span class="foodcontent1">4g</span></li>
+                      <li>Carbs: <span class="foodcontent1">27g</span></li>
+                      <li>Calories: <span class="foodcontent1">135</span></li>
+                    </ul>
+                  </p>
+                </div>
+
+                <!-- Snack 5 -->
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/5.png" class="glightbox">
+                    <img src="assets/img/menu/5.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Empanada</h4>  
+                  <p class="ingredients">
+                    Flour, ground meat (usually beef or chicken), potatoes, carrots, spices
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">10g</span></li>
+                      <li>Fats: <span class="foodcontent1">8g</span></li>
+                      <li>Carbs: <span class="foodcontent1">30g</span></li>
+                      <li>Calories: <span class="foodcontent1">220</span></li>
+                    </ul>
+                  </p>
+                </div>
+
+                <!-- Snack 6 -->
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/6.png" class="glightbox">
+                    <img src="assets/img/menu/6.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Chicharrón</h4>  
+                  <p class="ingredients">
+                    Pork skin, salt, oil for frying
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">12g</span></li>
+                      <li>Fats: <span class="foodcontent1">15g</span></li>
+                      <li>Carbs: <span class="foodcontent1">0g</span></li>
+                      <li>Calories: <span class="foodcontent1">200</span></li>
+                    </ul>
+                  </p>
+                </div>
+
+                <!-- Snack 7 -->
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/7.png" class="glightbox">
+                    <img src="assets/img/menu/7.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Halo-Halo</h4>  
+                  <p class="ingredients">
+                    Shaved ice, evaporated milk, sweetened beans, fruits, leche flan, ube, sugar
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">4g</span></li>
+                      <li>Fats: <span class="foodcontent1">5g</span></li>
+                      <li>Carbs: <span class="foodcontent1">40g</span></li>
+                      <li>Calories: <span class="foodcontent1">250</span></li>
+                    </ul>
+                  </p>
+                </div>
+
+                <!-- Snack 8 -->
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/8.png" class="glightbox">
+                    <img src="assets/img/menu/8.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Sweet Potato Fries</h4>  
+                  <p class="ingredients">
+                    Sweet potatoes, oil for frying, salt
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">2g</span></li>
+                      <li>Fats: <span class="foodcontent1">5g</span></li>
+                      <li>Carbs: <span class="foodcontent1">25g</span></li>
+                      <li>Calories: <span class="foodcontent1">130</span></li>
+                    </ul>
+                  </p>
+                </div>
+
+                <!-- Snack 9 -->
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/9.png" class="glightbox">
+                    <img src="assets/img/menu/9.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Pancit Canton</h4>  
+                  <p class="ingredients">
+                    Egg noodles, mixed vegetables, soy sauce, meat (chicken or pork), oil
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">10g</span></li>
+                      <li>Fats: <span class="foodcontent1">9g</span></li>
+                      <li>Carbs: <span class="foodcontent1">50g</span></li>
+                      <li>Calories: <span class="foodcontent1">350</span></li>
+                    </ul>
+                  </p>
+                </div>
+
+                <!-- Snack 10 -->
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/10.png" class="glightbox">
+                    <img src="assets/img/menu/10.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Fish Balls</h4>  
+                  <p class="ingredients">
+                    Fish paste, flour, water, salt, oil for frying
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">8g</span></li>
+                      <li>Fats: <span class="foodcontent1">5g</span></li>
+                      <li>Carbs: <span class="foodcontent1">15g</span></li>
+                      <li>Calories: <span class="foodcontent1">150</span></li>
+                    </ul>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- End Starter Menu Content -->
+
+            <div class="tab-pane fade" id="menu-breakfast">
+              <div class="tab-header text-center">
+                <p>Menu</p>
+                <h3>Breakfast</h3>
+              </div>
+
+              <div class="row gy-5">
+                <!-- Breakfast 1 -->
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/11.png" class="glightbox">
+                    <img src="assets/img/menu/11.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Silog Meal (Tapsilog)</h4>
+                  <p class="ingredients">
+                    Beef tapa, garlic fried rice, fried egg
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">25g</span></li>
+                      <li>Fats: <span class="foodcontent1">10g</span></li>
+                      <li>Carbs: <span class="foodcontent1">45g</span></li>
+                      <li>Calories: <span class="foodcontent1">400</span></li>
+                    </ul>
+                  </p>
+                </div>
+
+                <!-- Breakfast 2 -->
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/12.png" class="glightbox">
+                    <img src="assets/img/menu/12.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Silog Meal (Longsilog)</h4>
+                  <p class="ingredients">
+                    Longganisa, garlic fried rice, fried egg
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">20g</span></li>
+                      <li>Fats: <span class="foodcontent1">15g</span></li>
+                      <li>Carbs: <span class="foodcontent1">40g</span></li>
+                      <li>Calories: <span class="foodcontent1">450</span></li>
+                    </ul>
+                  </p>
+                </div>
+
+                <!-- Breakfast 3 -->
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/13.png" class="glightbox">
+                    <img src="assets/img/menu/13.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Silog Meal (Tocilog)</h4>
+                  <p class="ingredients">
+                    Tocino, garlic fried rice, fried egg
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">18g</span></li>
+                      <li>Fats: <span class="foodcontent1">12g</span></li>
+                      <li>Carbs: <span class="foodcontent1">45g</span></li>
+                      <li>Calories: <span class="foodcontent1">420</span></li>
+                    </ul>
+                  </p>
+                </div>
+
+                <!-- Breakfast 4 -->
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/14.png" class="glightbox">
+                    <img src="assets/img/menu/14.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Arroz Caldo</h4>
+                  <p class="ingredients">
+                    Rice, chicken, ginger, garlic, onion, fish sauce, boiled egg
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">15g</span></li>
+                      <li>Fats: <span class="foodcontent1">8g</span></li>
+                      <li>Carbs: <span class="foodcontent1">30g</span></li>
+                      <li>Calories: <span class="foodcontent1">250</span></li>
+                    </ul>
+                  </p>
+                </div>
+
+                <!-- Breakfast 5 -->
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/15.png" class="glightbox">
+                    <img src="assets/img/menu/15.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Champorado</h4>
+                  <p class="ingredients">
+                    Glutinous rice, cocoa powder, sugar, milk
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">4g</span></li>
+                      <li>Fats: <span class="foodcontent1">5g</span></li>
+                      <li>Carbs: <span class="foodcontent1">45g</span></li>
+                      <li>Calories: <span class="foodcontent1">220</span></li>
+                    </ul>
+                  </p>
+                </div>
+
+                <!-- Breakfast 6 -->
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/16.png" class="glightbox">
+                    <img src="assets/img/menu/16.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Pork Munggo</h4>
+                  <p class="ingredients">
+                    Mung beans cooked with pork, garlic, onions, tomatoes, and spinach
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">20g</span></li>
+                      <li>Fats: <span class="foodcontent1">15g</span></li>
+                      <li>Carbs: <span class="foodcontent1">40g</span></li>
+                      <li>Calories: <span class="foodcontent1">420</span></li>
+                    </ul>
+                  </p>
+                </div>
+
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/17.png" class="glightbox">
+                    <img src="assets/img/menu/17.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Nilagang Baka</h4>
+                  <p class="ingredients">
+                    Beef shank or ribs boiled with corn, potatoes, saba bananas, cabbage, and green beans
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">30g</span></li>
+                      <li>Fats: <span class="foodcontent1">20g</span></li>
+                      <li>Carbs: <span class="foodcontent1">40g</span></li>
+                      <li>Calories: <span class="foodcontent1">550</span></li>
+                    </ul>
+                  </p>
+                </div>                
+                
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/18.png" class="glightbox">
+                    <img src="assets/img/menu/18.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Boiled Pork Soup (Nilagang Baboy)</h4>
+                  <p class="ingredients">
+                    Pork ribs boiled with corn, potatoes, saba bananas, and vegetables like cabbage and green beans
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">25g</span></li>
+                      <li>Fats: <span class="foodcontent1">18g</span></li>
+                      <li>Carbs: <span class="foodcontent1">35g</span></li>
+                      <li>Calories: <span class="foodcontent1">480</span></li>
+                    </ul>
+                  </p>
+                </div>                
+
+                <!-- Breakfast 7 -->
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/19.png" class="glightbox">
+                    <img src="assets/img/menu/19.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Egg Sandwich</h4>
+                  <p class="ingredients">
+                    Bread, boiled egg, mayonnaise, salt, pepper
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">10g</span></li>
+                      <li>Fats: <span class="foodcontent1">8g</span></li>
+                      <li>Carbs: <span class="foodcontent1">20g</span></li>
+                      <li>Calories: <span class="foodcontent1">200</span></li>
+                    </ul>
+                  </p>
+                </div>
+
+                <!-- Breakfast 8 -->
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/20.png" class="glightbox">
+                    <img src="assets/img/menu/20.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Hotdog Silog</h4>
+                  <p class="ingredients">
+                    Hotdog, garlic fried rice, fried egg
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">12g</span></li>
+                      <li>Fats: <span class="foodcontent1">10g</span></li>
+                      <li>Carbs: <span class="foodcontent1">40g</span></li>
+                      <li>Calories: <span class="foodcontent1">350</span></li>
+                    </ul>
+                  </p>
+                </div>
+
+                <!-- Breakfast 9 -->
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/21.png" class="glightbox">
+                    <img src="assets/img/menu/21.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Corned Beef Silog</h4>
+                  <p class="ingredients">
+                    Corned beef, garlic fried rice, fried egg
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">15g</span></li>
+                      <li>Fats: <span class="foodcontent1">12g</span></li>
+                      <li>Carbs: <span class="foodcontent1">40g</span></li>
+                      <li>Calories: <span class="foodcontent1">370</span></li>
+                    </ul>
+                  </p>
+                </div>
+
+                <!-- Breakfast 10 -->
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/22.png" class="glightbox">
+                    <img src="assets/img/menu/22.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Daing na Bangus</h4>
+                  <p class="ingredients">
+                    Marinated milkfish, garlic fried rice, fried egg
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">25g</span></li>
+                      <li>Fats: <span class="foodcontent1">10g</span></li>
+                      <li>Carbs: <span class="foodcontent1">35g</span></li>
+                      <li>Calories: <span class="foodcontent1">350</span></li>
+                    </ul>
+                  </p>
+                </div>
+
+                <!-- Breakfast 11 -->
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/23.png" class="glightbox">
+                    <img src="assets/img/menu/23.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Spam Silog</h4>
+                  <p class="ingredients">
+                    Sliced spam, garlic fried rice, fried egg
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">14g</span></li>
+                      <li>Fats: <span class="foodcontent1">15g</span></li>
+                      <li>Carbs: <span class="foodcontent1">40g</span></li>
+                      <li>Calories: <span class="foodcontent1">400</span></li>
+                    </ul>
+                  </p>
+                </div>
+
+                <!-- Breakfast 12 -->
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/24.png" class="glightbox">
+                    <img src="assets/img/menu/24.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Pancit Canton</h4>
+                  <p class="ingredients">
+                    Egg noodles, mixed vegetables, soy sauce, meat (chicken or pork)
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">10g</span></li>
+                      <li>Fats: <span class="foodcontent1">9g</span></li>
+                      <li>Carbs: <span class="foodcontent1">50g</span></li>
+                      <li>Calories: <span class="foodcontent1">350</span></li>
+                    </ul>
+                  </p>
+                </div>
+
+                <!-- Breakfast 13 -->
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/25.png" class="glightbox">
+                    <img src="assets/img/menu/25.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Vegetable Omelette</h4>
+                  <p class="ingredients">
+                    Eggs, tomatoes, onions, bell peppers, oil
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">12g</span></li>
+                      <li>Fats: <span class="foodcontent1">10g</span></li>
+                      <li>Carbs: <span class="foodcontent1">5g</span></li>
+                      <li>Calories: <span class="foodcontent1">160</span></li>
+                    </ul>
+                  </p>
+                </div>
+                <!-- Menu Item -->
+              </div>
+            </div>
+            <!-- End Breakfast Menu Content -->
+
+            <div class="tab-pane fade" id="menu-lunch">
+              <div class="tab-header text-center">
+                <p>Menu</p>
+                <h3>Lunch</h3>
+              </div>
+
+              <div class="row gy-5">
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/11.png" class="glightbox">
+                    <img src="assets/img/menu/11.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Silog Meal (Tapsilog)</h4>
+                  <p class="ingredients">
+                    Beef tapa, garlic fried rice, fried egg
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">25g</span></li>
+                      <li>Fats: <span class="foodcontent1">10g</span></li>
+                      <li>Carbs: <span class="foodcontent1">45g</span></li>
+                      <li>Calories: <span class="foodcontent1">400</span></li>
+                    </ul>
+                  </p>
+                </div>
+                
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/12.png" class="glightbox">
+                    <img src="assets/img/menu/12.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Silog Meal (Longsilog)</h4>
+                  <p class="ingredients">
+                    Longganisa, garlic fried rice, fried egg
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">20g</span></li>
+                      <li>Fats: <span class="foodcontent1">12g</span></li>
+                      <li>Carbs: <span class="foodcontent1">45g</span></li>
+                      <li>Calories: <span class="foodcontent1">430</span></li>
+                    </ul>
+                  </p>
+                </div>
+                
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/26.png" class="glightbox">
+                    <img src="assets/img/menu/26.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Adobo</h4>
+                  <p class="ingredients">
+                    Chicken or pork cooked in soy sauce, vinegar, garlic, and bay leaves, served with rice
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">30g</span></li>
+                      <li>Fats: <span class="foodcontent1">15g</span></li>
+                      <li>Carbs: <span class="foodcontent1">50g</span></li>
+                      <li>Calories: <span class="foodcontent1">520</span></li>
+                    </ul>
+                  </p>
+                </div>
+                
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/27.png" class="glightbox">
+                    <img src="assets/img/menu/27.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Sinigang na Baboy</h4>
+                  <p class="ingredients">
+                    Pork in sour tamarind broth with vegetables like kangkong, sitaw, and labanos
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">28g</span></li>
+                      <li>Fats: <span class="foodcontent1">18g</span></li>
+                      <li>Carbs: <span class="foodcontent1">40g</span></li>
+                      <li>Calories: <span class="foodcontent1">450</span></li>
+                    </ul>
+                  </p>
+                </div>
+                
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/28.png" class="glightbox">
+                    <img src="assets/img/menu/28.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Lechon Kawali</h4>
+                  <p class="ingredients">
+                    Deep-fried crispy pork belly served with dipping sauce
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">35g</span></li>
+                      <li>Fats: <span class="foodcontent1">40g</span></li>
+                      <li>Carbs: <span class="foodcontent1">5g</span></li>
+                      <li>Calories: <span class="foodcontent1">600</span></li>
+                    </ul>
+                  </p>
+                </div>
+                
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/29.png" class="glightbox">
+                    <img src="assets/img/menu/29.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Bangus (Milkfish) Sisig</h4>
+                  <p class="ingredients">
+                    Grilled bangus mixed with onions, chilies, and mayonnaise, served on a sizzling plate
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">28g</span></li>
+                      <li>Fats: <span class="foodcontent1">22g</span></li>
+                      <li>Carbs: <span class="foodcontent1">10g</span></li>
+                      <li>Calories: <span class="foodcontent1">480</span></li>
+                    </ul>
+                  </p>
+                </div>
+                
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/30.png" class="glightbox">
+                    <img src="assets/img/menu/30.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Chicken Tinola</h4>
+                  <p class="ingredients">
+                    Chicken cooked in ginger broth with green papaya, chili leaves, and fish sauce
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">30g</span></li>
+                      <li>Fats: <span class="foodcontent1">8g</span></li>
+                      <li>Carbs: <span class="foodcontent1">25g</span></li>
+                      <li>Calories: <span class="foodcontent1">350</span></li>
+                    </ul>
+                  </p>
+                </div>
+                
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/31.png" class="glightbox">
+                    <img src="assets/img/menu/16.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Ginisang Munggo</h4>
+                  <p class="ingredients">
+                    Mung beans cooked with garlic, onions, tomatoes, and spinach
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">18g</span></li>
+                      <li>Fats: <span class="foodcontent1">5g</span></li>
+                      <li>Carbs: <span class="foodcontent1">40g</span></li>
+                      <li>Calories: <span class="foodcontent1">350</span></li>
+                    </ul>
+                  </p>
+                </div>
+                
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/31.png" class="glightbox">
+                    <img src="assets/img/menu/31.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Pinakbet</h4>
+                  <p class="ingredients">
+                    Stewed vegetables like eggplant, okra, bitter melon, and squash in shrimp paste
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">12g</span></li>
+                      <li>Fats: <span class="foodcontent1">10g</span></li>
+                      <li>Carbs: <span class="foodcontent1">35g</span></li>
+                      <li>Calories: <span class="foodcontent1">330</span></li>
+                    </ul>
+                  </p>
+                </div>
+                
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/32.png" class="glightbox">
+                    <img src="assets/img/menu/32.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Kalderetang Baka</h4>
+                  <p class="ingredients">
+                    Beef stew with tomato sauce, potatoes, carrots, and bell peppers
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">35g</span></li>
+                      <li>Fats: <span class="foodcontent1">25g</span></li>
+                      <li>Carbs: <span class="foodcontent1">40g</span></li>
+                      <li>Calories: <span class="foodcontent1">650</span></li>
+                    </ul>
+                  </p>
+                </div>
+                
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/33.png" class="glightbox">
+                    <img src="assets/img/menu/33.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Chicken Afritada</h4>
+                  <p class="ingredients">
+                    Chicken cooked in tomato sauce with potatoes, carrots, and bell peppers
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">30g</span></li>
+                      <li>Fats: <span class="foodcontent1">15g</span></li>
+                      <li>Carbs: <span class="foodcontent1">40g</span></li>
+                      <li>Calories: <span class="foodcontent1">450</span></li>
+                    </ul>
+                  </p>
+                </div>
+                
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/34.png" class="glightbox">
+                    <img src="assets/img/menu/34.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Inihaw na Liempo</h4>
+                  <p class="ingredients">
+                    Grilled pork belly marinated in soy sauce, garlic, and calamansi
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">30g</span></li>
+                      <li>Fats: <span class="foodcontent1">30g</span></li>
+                      <li>Carbs: <span class="foodcontent1">10g</span></li>
+                      <li>Calories: <span class="foodcontent1">550</span></li>
+                    </ul>
+                  </p>
+                </div>
+                
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/35.png" class="glightbox">
+                    <img src="assets/img/menu/35.png" class="menu-img img-fluid" alt="Utan Bisaya" />
+                  </a>
+                  <h4>Utan Bisaya</h4>
+                  <p class="ingredients">
+                    A mix of malunggay (moringa) leaves, squash, okra, eggplant, string beans, and alugbati (vine spinach) cooked in a light vegetable broth.
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">7g</span></li>
+                      <li>Fats: <span class="foodcontent1">3g</span></li>
+                      <li>Carbs: <span class="foodcontent1">15g</span></li>
+                      <li>Calories: <span class="foodcontent1">120</span></li>
+                    </ul>
+                  </p>
+                </div>                
+                
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/36.png" class="glightbox">
+                    <img src="assets/img/menu/36.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Laing</h4>
+                  <p class="ingredients">
+                    Dried taro leaves cooked in coconut milk with chili and shrimp paste
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">5g</span></li>
+                      <li>Fats: <span class="foodcontent1">15g</span></li>
+                      <li>Carbs: <span class="foodcontent1">25g</span></li>
+                      <li>Calories: <span class="foodcontent1">350</span></li>
+                    </ul>
+                  </p>
+                </div>
+                
+                <div class="col-lg-4 menu-item">
+                  <a href="assets/img/menu/37.png" class="glightbox">
+                    <img src="assets/img/menu/37.png" class="menu-img img-fluid" alt="" />
+                  </a>
+                  <h4>Bicol Express</h4>
+                  <p class="ingredients">
+                    Pork in spicy coconut milk with shrimp paste, long green peppers, and chili
+                  </p>
+                  <p class="foodcontent">
+                    <ul style="list-style-type: none; padding: 0;">
+                      <li>Protein: <span class="foodcontent1">25g</span></li>
+                      <li>Fats: <span class="foodcontent1">30g</span></li>
+                      <li>Carbs: <span class="foodcontent1">15g</span></li>
+                      <li>Calories: <span class="foodcontent1">520</span></li>
+                    </ul>
+                  </p>
+                </div>
+                <!-- Menu Item -->
+              </div>
+            </div>
+            <!-- End Lunch Menu Content -->
+
+          </div>
+        </div>
+      </section>
+      <!-- /Menu Section -->
+
+      <!-- Chefs Section -->
+      <section id="dietitian" class="chefs section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <p>
+            <span>Our</span>
+            <span class="description-title">Proffesional Dietitian<br /></span>
+          </p>
+        </div>
+        <!-- End Section Title -->
+
+        <div class="container d-flex justify-content-center"></div>
+          <div class="">
+            <div
+              class="d-flex justify-content-center"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="team-member">
+          <div class="member-img">
+            <img
+              src="assets/img/dietitian.jpg"
+              class="img-fluid"
+              alt=""
+            />
+            <div class="social">
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="member-info">
+            <h4>Maria Lourena Pancito</h4>
+            <span>Registered Nutritionist-Dietitian</span>
+            <p>
+              Maria Lourena Pancito is a dedicated Registered Nutritionist-Dietitian 
+              currently working at Maayo Hospital. With a passion for promoting health and <br>
+              wellness, she specializes in creating personalized nutrition plans to support patients in achieving their dietary goals. 
+            </p>
+          </div>
+              </div>
+            </div>
+            <!-- End Chef Team Member -->
+          </div>
+        </div>
+      </section>
+      <!-- /Chefs Section -->
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="container">
+        <div class="row gy-3 justify-content-center align-items-center">
+          <div class="col-lg-3 text-center">
+            <h4>Follow Us</h4>
+            <div class="social-links d-flex justify-content-center">
+              <a href="https://www.instagram.com/kakaibento24/" class="instagram"><i class="bi bi-instagram"></i>
+              <a href="https://www.facebook.com/profile.php?id=61570189710389" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="mailto:kakaibento24@gmail.com" class="gmail"><i class="bi bi-envelope-at"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="container copyright text-center mt-4">
+        <p>
+          © <span>Copyright</span> <strong class="px-1 sitename">KakaiBento</strong>
+          <span>All Rights Reserved</span>
+        </p>
+       
+      </div>
+    </footer>
+    
+
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/js/nutritioncalculator.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
